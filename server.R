@@ -16,11 +16,11 @@ function(input, output) {
 		token <- input$Token
 		URL <- paste0("https://graph.facebook.com/v2.5/search?limit=50&type=", input$Type, "&q=", URLencode(input$Query))
 		URL <- paste0(URL,"&access_token=", token)
-		print(URL)
+		#print(URL)
 		x<- getURL(URL)
 		#https://graph.facebook.com/v2.5/search?type=adTargetingCategory&class=behaviors&q=RTBF
 		x <- gsub("\n","", x)
-		View(fromJSON(x)$data)
+		#View(fromJSON(x)$data)
 		v$data <- fromJSON(x)$data
 	})
 }
