@@ -1,0 +1,22 @@
+bootstrapPage(
+	textInput("Token", "Facebook Token"), tags$a(href="https://developers.facebook.com/tools/explorer", "Get a Token"),
+	textInput("Query", "Query"),
+	#	textInput("Type", "Type", value = "adinterest"),
+	selectInput("Type", "Type", choices = c("adinterest", "adcountry", "adlocale", 
+						"adTargetingCategory&class=interests", 
+						"adTargetingCategory&class=behaviors",
+						"adTargetingCategory&class=demographics",
+						"adTargetingCategory&class=life_events",
+						"adTargetingCategory&class=industries",
+						"adTargetingCategory&class=home_type",
+						"adTargetingCategory&class=home_ownership",
+						"adTargetingCategory&class=household_composition",
+						"adTargetingCategory&class=office_type",
+						"adTargetingCategory&class=generation",
+						"adTargetingCategory&class=moms",
+						"adTargetingCategory&class=family_statuses",
+						"adworkemployer",
+						"adworkposition"), selected="adinterest"),
+	actionButton("do", "Go"),
+	dataTableOutput("dt")
+)
